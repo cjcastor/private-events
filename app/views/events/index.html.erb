@@ -1,3 +1,8 @@
-<% @events.each do |event| %>
-  <p><%= event.name %> hosted by <%= event.creator.name %>.</p>
+<h1>Past Events</h1>
+<% @events.past.each do |event| %>
+  <p><%= link_to event.name, event_path(event.id) %> hosted by <%= link_to event.creator.name, user_path(event.creator.id) %> on <%= event.event_date.to_s(:long) %>.</p>
+<% end %> 
+<h1>Upcoming Events</h1>
+<% @events.upcoming.each do |event| %>
+  <p><%= link_to event.name, event_path(event.id) %> hosted by <%= link_to event.creator.name, user_path(event.creator.id) %> on <%= event.event_date.to_s(:long) %>.</p>
 <% end %> 

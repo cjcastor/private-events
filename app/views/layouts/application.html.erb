@@ -10,10 +10,11 @@
 
   <body>
     <% if logged_in? %>
-      Welcome, <%= current_user.name %> | <%= link_to "Log out", logout_path, method: :delete %>
+      Welcome, <%= current_user.name %> | <%= link_to "Log out", logout_path, method: :delete %> | <%= link_to "Create a New Event", new_event_path %> | <%= link_to "Your Events", current_user %>
     <% else %>
     <%= link_to "Log In", login_path %> | <%= link_to "Sign Up", signup_path %>
-    <% end %> <p></p>
+    <% end %> | <%= link_to "Home", root_path %><p></p>
     <%= yield %>
   </body>
 </html>
+ 

@@ -1,5 +1,9 @@
-<h1><%= @user.name %></h1>
-<h2>Events</h2>
-<% @user.events.all.each do |event| %>
+<h1><%= @user.name %> is going to:</h1>
+<% user.attended_events.upcoming.each do |event| %>
+  <p><%= event.name %></p>
+<% end %>
+
+<h1><%= @user.name %> went to:</h1>
+<% @user.attended_events.past.each do |event| %>
   <p><%= event.name %></p>
 <% end %>
